@@ -1,0 +1,13 @@
+select a.name,a.revenue,
+
+count(b.company_id) cnt
+
+from companies a left join offices  b
+
+on a.company_id=b.company_id
+
+group by  a.name,a.revenue
+
+having count(b.company_id) <5
+
+order by cnt
